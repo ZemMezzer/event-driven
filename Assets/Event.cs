@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -5,81 +6,93 @@ namespace EventDriven
 {
     public abstract class Event : ScriptableObject
     {
-        [SerializeField] private UnityEvent onInvoke;
+        private readonly HashSet<EventListener> listeners = new HashSet<EventListener>();
 
         public void Invoke()
         {
-            onInvoke?.Invoke();
+            foreach (var listener in listeners)
+            {
+                listener.Rise();
+            }
         }
-
+        
         public void Add(EventListener eventListener)
         {
-            onInvoke.AddListener(eventListener.Rise);
+            listeners.Add(eventListener);
         }
 
         public void Remove(EventListener eventListener)
         {
-            onInvoke.RemoveListener(eventListener.Rise);
+            listeners.Remove(eventListener);
         }
     }
 
     public abstract class Event<T> : ScriptableObject
     {
-        [SerializeField] private UnityEvent<T> onInvoke;
-        
-        public void Invoke(T val1)
+        private readonly HashSet<EventListener<T>> listeners = new HashSet<EventListener<T>>();
+
+        public void Invoke(T value)
         {
-            onInvoke?.Invoke(val1);
+            foreach (var listener in listeners)
+            {
+                listener.Rise(value);
+            }
         }
         
         public void Add(EventListener<T> eventListener)
         {
-            onInvoke.AddListener(eventListener.Rise);
+            listeners.Add(eventListener);
         }
 
         public void Remove(EventListener<T> eventListener)
         {
-            onInvoke.RemoveListener(eventListener.Rise);
+            listeners.Remove(eventListener);
         }
     }
     
     public abstract class Event<T1, T2> : ScriptableObject
     {
-        [SerializeField] private UnityEvent<T1, T2> onInvoke;
-        
-        public void Invoke(T1 val1, T2 val2)
+        private readonly HashSet<EventListener<T1, T2>> listeners = new HashSet<EventListener<T1, T2>>();
+
+        public void Invoke(T1 value1, T2 value2)
         {
-            onInvoke?.Invoke(val1, val2);
+            foreach (var listener in listeners)
+            {
+                listener.Rise(value1, value2);
+            }
         }
         
         public void Add(EventListener<T1, T2> eventListener)
         {
-            onInvoke.AddListener(eventListener.Rise);
+            listeners.Add(eventListener);
         }
 
         public void Remove(EventListener<T1, T2> eventListener)
         {
-            onInvoke.RemoveListener(eventListener.Rise);
+            listeners.Remove(eventListener);
         }
     }
     
     public abstract class Event<T1, T2, T3> : ScriptableObject
     {
-        [SerializeField] private UnityEvent<T1, T2, T3> onInvoke;
-        
-        public void Invoke(T1 val1, T2 val2, T3 val3)
+        private readonly HashSet<EventListener<T1, T2, T3>> listeners = new HashSet<EventListener<T1, T2, T3>>();
+
+        public void Invoke(T1 value1, T2 value2, T3 value3)
         {
-            onInvoke?.Invoke(val1, val2, val3);
+            foreach (var listener in listeners)
+            {
+                listener.Rise(value1, value2, value3);
+            }
         }
         
         public void Add(EventListener<T1, T2, T3> eventListener)
         {
-            onInvoke.AddListener(eventListener.Rise);
+            listeners.Add(eventListener);
         }
 
         public void Remove(EventListener<T1, T2, T3> eventListener)
         {
-            onInvoke.RemoveListener(eventListener.Rise);
+            listeners.Remove(eventListener);
         }
     }
 }
