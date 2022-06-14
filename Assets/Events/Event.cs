@@ -3,7 +3,8 @@ using UnityEngine;
 
 namespace EventDriven
 {
-    public abstract class Event : ScriptableObject
+    [CreateAssetMenu(menuName = "Events/Event")]
+    public class Event : ScriptableObject
     {
         private readonly HashSet<EventListener> listeners = new HashSet<EventListener>();
 
