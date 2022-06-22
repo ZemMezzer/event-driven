@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -46,7 +45,7 @@ namespace EventDriven
     
     public class EventListener : EventListenerBase
     {
-        [SerializeField] private Event[] events;
+        [SerializeField] private EventAsset[] events;
         [SerializeField] private UnityEvent onRise;
 
         protected override void Subscribe()
@@ -65,7 +64,7 @@ namespace EventDriven
             }
         }
 
-        public void Rise()
+        public virtual void Rise()
         {
             onRise.Invoke();
         }
@@ -73,7 +72,7 @@ namespace EventDriven
 
     public class EventListener<T> : EventListenerBase
     {
-        [SerializeField] private Event<T>[] events;
+        [SerializeField] private EventAsset<T>[] events;
         [SerializeField] private UnityEvent<T> onRise;
         
         protected override void Subscribe()
@@ -92,7 +91,7 @@ namespace EventDriven
             }
         }
         
-        public void Rise(T value)
+        public virtual void Rise(T value)
         {
             onRise.Invoke(value);
         }
@@ -100,7 +99,7 @@ namespace EventDriven
     
     public class EventListener<T1, T2> : EventListenerBase
     {
-        [SerializeField] private Event<T1, T2>[] events;
+        [SerializeField] private EventAsset<T1, T2>[] events;
         [SerializeField] private UnityEvent<T1, T2> onRise;
         
         protected override void Subscribe()
@@ -119,7 +118,7 @@ namespace EventDriven
             }
         }
         
-        public void Rise(T1 value1, T2 value2)
+        public virtual void Rise(T1 value1, T2 value2)
         {
             onRise.Invoke(value1, value2);
         }
@@ -127,7 +126,7 @@ namespace EventDriven
     
     public class EventListener<T1, T2, T3> : EventListenerBase
     {
-        [SerializeField] private Event<T1, T2, T3>[] events;
+        [SerializeField] private EventAsset<T1, T2, T3>[] events;
         [SerializeField] private UnityEvent<T1, T2, T3> onRise;
         
         protected override void Subscribe()
@@ -146,7 +145,7 @@ namespace EventDriven
             }
         }
         
-        public void Rise(T1 value1, T2 value2, T3 value3)
+        public virtual void Rise(T1 value1, T2 value2, T3 value3)
         {
             onRise.Invoke(value1, value2, value3);
         }

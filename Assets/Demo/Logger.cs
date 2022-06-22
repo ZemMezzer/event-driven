@@ -6,7 +6,12 @@ namespace EventDriven.Demo
     {
         public void LogInt(int value)
         {
-            Debug.Log(value);
+            Debug.Log($"Log Int Value: \"{value.ToString()}\"");
+        }
+
+        public void StringLog(string value)
+        {
+            Debug.Log($"Log String Value: \"{value}\"");
         }
     }
 }

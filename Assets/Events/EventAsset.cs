@@ -4,7 +4,7 @@ using UnityEngine;
 namespace EventDriven
 {
     [CreateAssetMenu(menuName = "Events/Event")]
-    public class Event : ScriptableObject
+    public class EventAsset : ScriptableObject
     {
         private readonly HashSet<EventListener> listeners = new HashSet<EventListener>();
 
@@ -27,7 +27,7 @@ namespace EventDriven
         }
     }
 
-    public abstract class Event<T> : ScriptableObject
+    public abstract class EventAsset<T> : ScriptableObject
     {
         private readonly HashSet<EventListener<T>> listeners = new HashSet<EventListener<T>>();
 
@@ -50,7 +50,7 @@ namespace EventDriven
         }
     }
     
-    public abstract class Event<T1, T2> : ScriptableObject
+    public abstract class EventAsset<T1, T2> : ScriptableObject
     {
         private readonly HashSet<EventListener<T1, T2>> listeners = new HashSet<EventListener<T1, T2>>();
 
@@ -73,7 +73,7 @@ namespace EventDriven
         }
     }
     
-    public abstract class Event<T1, T2, T3> : ScriptableObject
+    public abstract class EventAsset<T1, T2, T3> : ScriptableObject
     {
         private readonly HashSet<EventListener<T1, T2, T3>> listeners = new HashSet<EventListener<T1, T2, T3>>();
 
