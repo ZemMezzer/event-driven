@@ -1,5 +1,4 @@
-using System;
-using EventDriven.Demo.Scripts.PersistantData.Events;
+using EventDriven.Default.Events;
 using UnityEngine;
 
 namespace EventDriven.Demo

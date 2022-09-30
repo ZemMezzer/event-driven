@@ -207,12 +207,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 957996852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27c9d7462e9c9c9439d068a1123a24dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c201589dda24f244a0212f24f703251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   useOnEnableOnDisable: 0
   events:
-  - {fileID: 11400000, guid: df7e4104c245b624289d3764cb1950e6, type: 2}
+  - {fileID: 11400000, guid: d29ea3d6e729694468b426fde0e540d3, type: 2}
   onRise:
     m_PersistentCalls:
       m_Calls:
@@ -300,12 +300,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1215757150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee1023d5a7879664f99e5363689b343f, type: 3}
+  m_Script: {fileID: 11500000, guid: 58feaec6e6224c942916a2e07f02aa73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   useOnEnableOnDisable: 0
   events:
-  - {fileID: 11400000, guid: 43c78718e33b8c44ab96a55c070e8ec4, type: 2}
+  - {fileID: 11400000, guid: 9d8a63d88bb235f4ba38934a54a6738d, type: 2}
   onRise:
     m_PersistentCalls:
       m_Calls:
@@ -351,8 +351,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logData: Hello World!
-  intEventAsset: {fileID: 11400000, guid: 43c78718e33b8c44ab96a55c070e8ec4, type: 2}
-  stringEventAsset: {fileID: 11400000, guid: df7e4104c245b624289d3764cb1950e6, type: 2}
+  intEventAsset: {fileID: 11400000, guid: 9d8a63d88bb235f4ba38934a54a6738d, type: 2}
+  stringEventAsset: {fileID: 11400000, guid: d29ea3d6e729694468b426fde0e540d3, type: 2}
 --- !u!4 &2101451715
 Transform:
   m_ObjectHideFlags: 0
